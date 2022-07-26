@@ -21,7 +21,6 @@ plugins {
     id(Config.ApplyPlugins.KT_LINT) version Config.KTLINT_GRADLE_VERSION
     id(Config.ApplyPlugins.DETEKT) version Config.DETEKT_VERSION
     id(Config.ApplyPlugins.KSP) version Config.KSP_VERSION
-
 }
 
 

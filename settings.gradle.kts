@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 rootProject.name = "Android-Maps-Demo"
 include(":app")
 include(":compose")
+include(":data")
