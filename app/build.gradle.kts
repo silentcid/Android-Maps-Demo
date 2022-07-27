@@ -131,9 +131,9 @@ android {
 // Declare configurations per variant to use in the dependencies block below. See :data module for examples if needed here in the :app module.
 
 dependencies {
-    //implementation(project(mapOf("path" to ":domain")))
-    //implementation(project(mapOf("path" to ":data")))
-    //implementation(project(mapOf("path" to ":compose")))
+    implementation(project(mapOf("path" to ":domain")))
+    implementation(project(mapOf("path" to ":data")))
+    implementation(project(mapOf("path" to ":compose")))
     // TODO: List out each jar/aar explicitly to help avoid the danger of someone "slipping" a dangerous lib into the directory
     // implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 

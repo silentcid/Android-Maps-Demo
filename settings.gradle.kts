@@ -16,3 +16,4 @@ rootProject.name = "Android-Maps-Demo"
 include(":app")
 include(":compose")
 include(":data")
+include(":domain")
