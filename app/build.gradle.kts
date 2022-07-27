@@ -10,7 +10,7 @@ plugins {
 
 extra.set("jacocoCoverageThreshold", 0.40.toBigDecimal()) // module specific code coverage verification threshold
 
-//apply(from = "../renameAppBundle.gradle.kts") // configures additional gradle tasks to rename app bundles (when needed)
+apply(from = "../renameAppBundle.gradle.kts") // configures additional gradle tasks to rename app bundles (when needed)
 
 // Prep BuildInfoManager to use its functions/properties later throughout this build script
 BuildInfoManager.initialize(
