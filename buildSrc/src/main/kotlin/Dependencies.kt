@@ -28,7 +28,7 @@ object Config {
     // View how to execute the coverage and verifcations gradle tasks as well as how to view coverage reports in the local jacocoSetup.gradle file
     // http://www.jacoco.org/jacoco/trunk/doc/
     // https://github.com/jacoco/jacoco/releases
-    // const val JACOCO_VERSION = "0.8.7" - Helper jacoco gradle files manage the jacoco plugin version due to issues reading this value inside groovy gradle files
+    const val JACOCO_VERSION = "0.8.7" //- Helper jacoco gradle files manage the jacoco plugin version due to issues reading this value inside groovy gradle files
 
     // Website info: https://detekt.github.io/detekt/index.html
     // Rules:
@@ -75,7 +75,7 @@ object Config {
         const val GRADLE_VERSIONS = "com.github.ben-manes.versions"
         const val KT_LINT = "org.jlleitschuh.gradle.ktlint"
         const val DETEKT = "io.gitlab.arturbosch.detekt"
-        // const val JACOCO = "jacoco" // https://docs.gradle.org/current/userguide/jacoco_plugin.html - Helper jacoco gradle files manage applying the jacoco plugin
+        const val JACOCO = "jacoco" // https://docs.gradle.org/current/userguide/jacoco_plugin.html - Helper jacoco gradle files manage applying the jacoco plugin
         const val PARCELIZE = "kotlin-parcelize"
         const val KSP = "com.google.devtools.ksp"
         object Kotlin {
@@ -89,7 +89,7 @@ object Config {
 
         // https://developer.android.com/studio/releases/build-tools
         const val BUILD_TOOLS = "31.0.0"
-        const val MIN_SDK = 24 // TODO: TEMPLATE - Replace with appropriate project minSdkVersion
+        const val MIN_SDK = 26 // TODO: TEMPLATE - Replace with appropriate project minSdkVersion
 
         // https://developer.android.com/about/versions/12/behavior-changes-12
         const val TARGET_SDK = 31

@@ -6,13 +6,14 @@ plugins {
 }
 
 extra.set("jacocoCoverageThreshold", 0.40.toBigDecimal()) // module specific code coverage verification threshold
-//apply(from = "../jacocoModule.gradle")
+apply(from = "../jacocoModule.gradle")
 
 android {
     namespace = "com.bottlerocketstudios.data"
     compileSdk = 32
 
     defaultConfig {
+
         minSdk = Config.AndroidSdkVersions.MIN_SDK
         targetSdk = Config.AndroidSdkVersions.TARGET_SDK
         // As of AGP 7.0, versionName and versionCode have been removed from library modules: https://stackoverflow.com/a/67803541/201939

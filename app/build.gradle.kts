@@ -50,13 +50,6 @@ android {
         kotlinCompilerExtensionVersion = Config.Compose.COMPOSE_COMPILER_VERSION
     }
     signingConfigs {
-        getByName("debug") {
-            // Common debug keystore so all local builds can be shared between devs/QA
-            storeFile = file("../keystore/debug.keystore") // TODO: TEMPLATE - Generate a new debug keystore (optional). More info in NEW_PROJECT_STARTER.md
-            storePassword = "android"
-            keyAlias = "androiddebugkey"
-            keyPassword = "android"
-        }
         create("release") {
             // Release keystore expected to be present in environment variables (living on the build server)
             storeFile = file(System.getenv("_KEYSTORE") ?: "_KEYSTORE environment variable not set for release build type; unable to compile the current variant")
@@ -71,7 +64,7 @@ android {
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
-            signingConfig = signingConfigs.getByName("release")
+           //signingConfig = signingConfigs.getByName("release")
         }
         getByName("debug") {
             applicationIdSuffix = ".debug"
