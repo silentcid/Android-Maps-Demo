@@ -23,7 +23,6 @@ plugins {
     id(Config.ApplyPlugins.KSP) version Config.KSP_VERSION
 }
 
-
 // Configuration below applies to all other modules (specified in settings.gradle.kts)
 // Gradle docs at https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:subprojects(groovy.lang.Closure)
 subprojects {

@@ -51,6 +51,8 @@ object Config {
     // TODO: First part of version should match version of kotlin - see https://github.com/google/ksp/blob/main/docs/faq.md
     const val KSP_VERSION = "1.7.0-1.0.6"
 
+    const val COMPOSE_MAPS_VERSION = "2.5.3"
+
     /**
      * Called from root project buildscript block in the project root build.gradle.kts
      */
@@ -148,6 +150,14 @@ private object Libraries {
     private const val COMPOSE_COMPILER_VERSION = Config.Compose.COMPOSE_COMPILER_VERSION
     const val COMPOSE_COMPILER = "androidx.compose.compiler:compiler:$COMPOSE_COMPILER_VERSION"
     const val COMPOSE_UI = "androidx.compose.ui:ui:$COMPOSE_VERSION"
+
+    // Android Map Compose
+    // https://github.com/googlemaps/android-maps-compose
+    private const val COMPOSE_MAPS_VERSION = Config.COMPOSE_MAPS_VERSION
+    const val COMPOSE_MAPS = "com.google.maps.android:maps-compose:$COMPOSE_MAPS_VERSION"
+    const val GOOGLE_MAPS = "com.google.android.gms:play-services-maps:18.0.2"
+    const val COMPOSE_MAPS_WIDGETS = "com.google.maps.android:maps-compose-widgets:$COMPOSE_MAPS_VERSION"
+
 
     // Tooling support (Previews, etc.)
     const val COMPOSE_UI_TOOLING = "androidx.compose.ui:ui-tooling:$COMPOSE_VERSION"
@@ -368,6 +378,12 @@ fun DependencyHandler.composeDependencies() {
     implementation(Libraries.COMPOSE_MATERIAL3_WINDOW_SIZE)
     implementation(Libraries.COMPOSE_LIVE_DATA)
     debugImplementation(Libraries.COMPOSE_UI_TOOLING)
+}
+
+fun DependencyHandler.composeMapsDependencies() {
+    implementation((Libraries.COMPOSE_MAPS))
+    implementation((Libraries.COMPOSE_MAPS_WIDGETS))
+    implementation((Libraries.GOOGLE_MAPS))
 }
 
 fun DependencyHandler.accompanistDependencies() {
