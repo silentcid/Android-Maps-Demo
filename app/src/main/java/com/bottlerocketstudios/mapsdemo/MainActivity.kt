@@ -9,6 +9,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.bottlerocketstudios.compose.GoogleMapsView
 import com.bottlerocketstudios.mapsdemo.ui.theme.AndroidMapsDemoTheme
 
 class MainActivity : ComponentActivity() {
@@ -16,13 +17,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             AndroidMapsDemoTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Greeting("Android")
-                }
+                GoogleMapsView(toolbarEnabled = false, modifier = Modifier.fillMaxSize())
             }
         }
     }
@@ -37,6 +32,6 @@ fun Greeting(name: String) {
 @Composable
 fun DefaultPreview() {
     AndroidMapsDemoTheme {
-        Greeting("Android")
+        GoogleMapsView(toolbarEnabled = false, modifier = Modifier.fillMaxSize())
     }
 }

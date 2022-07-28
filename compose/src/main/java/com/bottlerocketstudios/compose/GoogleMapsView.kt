@@ -42,7 +42,7 @@ fun GoogleMapsView(toolbarEnabled: Boolean = false, modifier: Modifier) {
                     mapToolbarEnabled = !mapUiSettings.mapToolbarEnabled
                 )
             }) {
-                Text(text = "toggle map menu" )
+                Text(text = stringResource(R.string.toggle_map_toolbar) )
             }
         }
     }
