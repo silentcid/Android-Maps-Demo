@@ -1,4 +1,4 @@
-package com.bottlerocketstudios.android_maps_demo.ui.theme
+package com.bottlerocketstudios.mapsdemo.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

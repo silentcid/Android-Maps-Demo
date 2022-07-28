@@ -15,8 +15,8 @@ apply(from = "../renameAppBundle.gradle.kts") // configures additional gradle ta
 // Prep BuildInfoManager to use its functions/properties later throughout this build script
 BuildInfoManager.initialize(
     BuildInfoInput(
-        appVersion = AppVersion(major = 1, minor = 0, patch = 0, hotfix = 0, showEmptyPatchNumberInVersionName = true), // TODO: TEMPLATE - Replace with appropriate app version
-        brandName = "BR_Architecture", // TODO: TEMPLATE - Replace with appropriate project brand name
+        appVersion = AppVersion(major = 1, minor = 0, patch = 0, hotfix = 0, showEmptyPatchNumberInVersionName = true),
+        brandName = "BR_Maps_Demo",
         productionReleaseVariantName = "productionRelease",
         rootProjectDir = rootDir
     )
@@ -87,14 +87,14 @@ android {
     // See BEST_PRACTICES.md for comments on purpose of each build type/flavor/variant
     productFlavors {
         create("internal") {
-            applicationId = "com.bottlerocketstudios.brarchitecture.internal" // TODO: TEMPLATE - Replace with appropriate project applicationId prefix, leaving .internal
+            applicationId = "com.bottlerocketstudios.mapsdemo.internal"
             versionNameSuffix = "-internal"
             buildConfigField("boolean", "INTERNAL", "true")
             buildConfigField("boolean", "PRODUCTION", "false")
             dimension = "environment"
         }
         create("production") {
-            applicationId = "com.bottlerocketstudios.brarchitecture" // TODO: TEMPLATE - Replace full string with appropriate project applicationId
+            applicationId = "com.bottlerocketstudios.mapsdemo.internal"
             buildConfigField("boolean", "INTERNAL", "false")
             buildConfigField("boolean", "PRODUCTION", "true")
             dimension = "environment"

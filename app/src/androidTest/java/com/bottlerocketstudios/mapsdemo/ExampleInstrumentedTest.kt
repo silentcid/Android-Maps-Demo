@@ -1,4 +1,4 @@
-package com.bottlerocketstudios.android_maps_demo
+package com.bottlerocketstudios.mapsdemo
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

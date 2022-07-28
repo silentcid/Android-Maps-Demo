@@ -1,4 +1,4 @@
-package com.bottlerocketstudios.android_maps_demo
+package com.bottlerocketstudios.mapsdemo
 
 import org.junit.Test
 
