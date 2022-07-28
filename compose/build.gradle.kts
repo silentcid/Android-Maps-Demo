@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.bottlerocketstudios.compose"
-    compileSdk = 32
+    compileSdk = Config.AndroidSdkVersions.COMPILE_SDK
 
     defaultConfig {
         minSdk = Config.AndroidSdkVersions.MIN_SDK
@@ -31,6 +31,13 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
     }
+    buildFeatures {
+        compose = true // Enables Jetpack Compose for this module
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = Config.Compose.COMPOSE_COMPILER_VERSION
+    }
+
 }
 
 dependencies {

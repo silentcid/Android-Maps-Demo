@@ -1,4 +1,4 @@
-package com.bottlerocketstudios.compose
+package compose.bottlerocketstudios.compose
 
 import org.junit.Test
 

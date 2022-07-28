@@ -11,23 +11,27 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.bottlerocketstudios.android_maps_demo.ui.theme.AndroidMapsDemoTheme
+import com.bottlerocketstudios.compose.GoogleMapPreview
+import com.bottlerocketstudios.compose.GoogleMapsView
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             AndroidMapsDemoTheme {
-                // A surface container using the 'background' color from the theme
+                /*// A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
                     Greeting("Android")
-                }
+                }*/
+                GoogleMapsView(toolbarEnabled = false, Modifier.fillMaxSize())
             }
         }
     }
 }
+
 
 @Composable
 fun Greeting(name: String) {

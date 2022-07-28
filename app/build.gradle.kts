@@ -1,11 +1,14 @@
 import com.android.build.gradle.api.ApplicationVariant
 import com.android.build.gradle.api.BaseVariantOutput
+import org.jetbrains.kotlin.gradle.utils.loadPropertyFromResources
 
 plugins {
     id(Config.ApplyPlugins.ANDROID_APPLICATION)
     kotlin(Config.ApplyPlugins.Kotlin.ANDROID)
     id(Config.ApplyPlugins.KSP)
     id(Config.ApplyPlugins.PARCELIZE)
+    id(Config.ApplyPlugins.GOOGLE_MAPS_SECRETS_PLUGIN)
+
 }
 
 extra.set("jacocoCoverageThreshold", 0.40.toBigDecimal()) // module specific code coverage verification threshold
@@ -29,6 +32,7 @@ android {
     compileSdk = Config.AndroidSdkVersions.COMPILE_SDK
     buildToolsVersion = Config.AndroidSdkVersions.BUILD_TOOLS
     defaultConfig {
+
         minSdk = Config.AndroidSdkVersions.MIN_SDK
         targetSdk = Config.AndroidSdkVersions.TARGET_SDK
         versionCode = BuildInfoManager.APP_VERSION.versionCode
