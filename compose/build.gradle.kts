@@ -37,7 +37,6 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = Config.Compose.COMPOSE_COMPILER_VERSION
     }
-
 }
 
 dependencies {

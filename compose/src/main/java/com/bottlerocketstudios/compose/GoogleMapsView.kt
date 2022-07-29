@@ -19,7 +19,7 @@ import com.google.maps.android.compose.GoogleMap
 import com.google.maps.android.compose.MapProperties
 import com.google.maps.android.compose.MapUiSettings
 
-//https://developers.google.com/maps/documentation/android-sdk/views#zoom
+// https://developers.google.com/maps/documentation/android-sdk/views#zoom
 private const val MAX_ZOOM_LEVEL = 15f // Street level
 private const val MIN_ZOOM_LEVEL = 5f // Landmass/Continent
 
@@ -42,7 +42,7 @@ fun GoogleMapsView(toolbarEnabled: Boolean = false, modifier: Modifier) {
                     mapToolbarEnabled = !mapUiSettings.mapToolbarEnabled
                 )
             }) {
-                Text(text = stringResource(R.string.toggle_map_toolbar) )
+                Text(text = stringResource(R.string.toggle_map_toolbar))
             }
         }
     }

@@ -25,7 +25,6 @@ plugins {
     id(Config.ApplyPlugins.GOOGLE_MAPS_SECRETS_PLUGIN) version Config.MAPS_SECRETS_VERSION
 }
 
-
 secrets {
     // To add your Maps API Key to this project:
     // 1. Add this line to your local.properties file where YOUR_API_KEY is your API key:

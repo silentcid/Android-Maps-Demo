@@ -1,6 +1,5 @@
 import com.android.build.gradle.api.ApplicationVariant
 import com.android.build.gradle.api.BaseVariantOutput
-import org.jetbrains.kotlin.gradle.utils.loadPropertyFromResources
 
 plugins {
     id(Config.ApplyPlugins.ANDROID_APPLICATION)
@@ -8,7 +7,6 @@ plugins {
     id(Config.ApplyPlugins.KSP)
     id(Config.ApplyPlugins.PARCELIZE)
     id(Config.ApplyPlugins.GOOGLE_MAPS_SECRETS_PLUGIN)
-
 }
 // module specific code coverage verification threshold
 extra.set("jacocoCoverageThreshold", 0.40.toBigDecimal())
