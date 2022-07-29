@@ -1,4 +1,4 @@
-package com.bottlerocketstudios.mapsdemo
+package com.bottlerocketstudios.compose
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
@@ -17,6 +17,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.example.mapsdemo", appContext.packageName)
+        assertEquals("com.bottlerocketstudios.compose.test", appContext.packageName)
     }
 }

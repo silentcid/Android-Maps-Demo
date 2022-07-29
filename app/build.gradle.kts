@@ -10,15 +10,19 @@ plugins {
     id(Config.ApplyPlugins.GOOGLE_MAPS_SECRETS_PLUGIN)
 
 }
+// module specific code coverage verification threshold
+extra.set("jacocoCoverageThreshold", 0.40.toBigDecimal())
 
-extra.set("jacocoCoverageThreshold", 0.40.toBigDecimal()) // module specific code coverage verification threshold
-
-apply(from = "../renameAppBundle.gradle.kts") // configures additional gradle tasks to rename app bundles (when needed)
+apply(from = "../renameAppBundle.gradle.kts") // configures additional gradle tasks to rename
+// app bundles (when needed)
 
 // Prep BuildInfoManager to use its functions/properties later throughout this build script
 BuildInfoManager.initialize(
     BuildInfoInput(
-        appVersion = AppVersion(major = 1, minor = 0, patch = 0, hotfix = 0, showEmptyPatchNumberInVersionName = true),
+        appVersion = AppVersion(
+            major = 1, minor = 0, patch = 0, hotfix = 0,
+            showEmptyPatchNumberInVersionName = true
+        ),
         brandName = "BR_Maps_Demo",
         productionReleaseVariantName = "productionRelease",
         rootProjectDir = rootDir
@@ -55,8 +59,15 @@ android {
     }
     signingConfigs {
         create("release") {
-            // Release keystore expected to be present in environment variables (living on the build server)
-            storeFile = file(System.getenv("_KEYSTORE") ?: "_KEYSTORE environment variable not set for release build type; unable to compile the current variant")
+            // Release keystore expected to be present in environment variables
+            // (living on the build server)
+            storeFile = file(
+                System.getenv("_KEYSTORE")
+                    ?: (
+                        "_KEYSTORE environment variable not set for release build type;" +
+                            "unable to compile the current variant"
+                        )
+            )
             storePassword = System.getenv("_KEYSTORE_PASSWORD")
             keyAlias = System.getenv("_KEY_ALIAS")
             keyPassword = System.getenv("_KEY_PASSWORD")
@@ -68,7 +79,7 @@ android {
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
-           //signingConfig = signingConfigs.getByName("release")
+            // signingConfig = signingConfigs.getByName("release")
         }
         getByName("debug") {
             applicationIdSuffix = ".debug"
@@ -98,7 +109,7 @@ android {
             dimension = "environment"
         }
         create("production") {
-            applicationId = "com.bottlerocketstudios.mapsdemo.internal"
+            applicationId = "com.bottlerocketstudios.mapsdemo"
             buildConfigField("boolean", "INTERNAL", "false")
             buildConfigField("boolean", "PRODUCTION", "true")
             dimension = "environment"
