@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Android-Maps-Demo</string>
+    <string name="toogle_map_toolbar">Toggle Map Toolbar</string>
 </resources>

@@ -6,6 +6,7 @@ plugins {
     kotlin(Config.ApplyPlugins.Kotlin.ANDROID)
     id(Config.ApplyPlugins.KSP)
     id(Config.ApplyPlugins.PARCELIZE)
+    id(Config.ApplyPlugins.GOOGLE_MAPS_SECRETS_PLUGIN)
 }
 // module specific code coverage verification threshold
 extra.set("jacocoCoverageThreshold", 0.40.toBigDecimal())
@@ -29,6 +30,7 @@ android {
     compileSdk = Config.AndroidSdkVersions.COMPILE_SDK
     buildToolsVersion = Config.AndroidSdkVersions.BUILD_TOOLS
     defaultConfig {
+
         minSdk = Config.AndroidSdkVersions.MIN_SDK
         targetSdk = Config.AndroidSdkVersions.TARGET_SDK
         versionCode = BuildInfoManager.APP_VERSION.versionCode

@@ -53,6 +53,8 @@ object Config {
 
     const val COMPOSE_MAPS_VERSION = "2.5.3"
 
+    const val MAPS_SECRETS_VERSION = "2.0.1"
+
     /**
      * Called from root project buildscript block in the project root build.gradle.kts
      */
@@ -80,6 +82,10 @@ object Config {
         const val JACOCO = "jacoco" // https://docs.gradle.org/current/userguide/jacoco_plugin.html - Helper jacoco gradle files manage applying the jacoco plugin
         const val PARCELIZE = "kotlin-parcelize"
         const val KSP = "com.google.devtools.ksp"
+
+        // https://developers.google.com/maps/documentation/android-sdk/secrets-gradle-plugin
+        const val GOOGLE_MAPS_SECRETS_PLUGIN = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin"
+
         object Kotlin {
             const val ANDROID = "android"
         }

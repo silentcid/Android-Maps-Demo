@@ -21,6 +21,15 @@ plugins {
     id(Config.ApplyPlugins.KT_LINT) version Config.KTLINT_GRADLE_VERSION
     id(Config.ApplyPlugins.DETEKT) version Config.DETEKT_VERSION
     id(Config.ApplyPlugins.KSP) version Config.KSP_VERSION
+    // https://developers.google.com/maps/documentation/android-sdk/secrets-gradle-plugin
+    id(Config.ApplyPlugins.GOOGLE_MAPS_SECRETS_PLUGIN) version Config.MAPS_SECRETS_VERSION
+}
+
+secrets {
+    // To add your Maps API Key to this project:
+    // 1. Add this line to your local.properties file where YOUR_API_KEY is your API key:
+    // MAPS_API_KEY=YOUR_API_KEY
+    defaultPropertiesFileName = "local.defaults.properties"
 }
 
 // Configuration below applies to all other modules (specified in settings.gradle.kts)
