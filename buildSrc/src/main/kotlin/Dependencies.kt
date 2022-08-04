@@ -164,6 +164,9 @@ private object Libraries {
     const val GOOGLE_MAPS = "com.google.android.gms:play-services-maps:18.0.2"
     const val COMPOSE_MAPS_WIDGETS = "com.google.maps.android:maps-compose-widgets:$COMPOSE_MAPS_VERSION"
 
+    // Places API
+    pri
+
 
     // Tooling support (Previews, etc.)
     const val COMPOSE_UI_TOOLING = "androidx.compose.ui:ui-tooling:$COMPOSE_VERSION"
