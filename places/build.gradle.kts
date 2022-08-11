@@ -34,9 +34,12 @@ android {
 }
 
 dependencies {
+    implementation(project(mapOf("path" to ":domain")))
+
     // Utility
     timberDependencies()
-
+    // Places Api
+    placesApiDependencies()
     // Koin - Dependency Injection
     koinDependencies()
 }

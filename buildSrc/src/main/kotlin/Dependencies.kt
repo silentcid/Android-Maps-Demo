@@ -239,7 +239,7 @@ private object Libraries {
     //// Koin
     // https://github.com/InsertKoinIO/koin/blob/master/CHANGELOG.md
     // https://github.com/InsertKoinIO/koin/tags
-    const val KOIN_ANDROID = "io.insert-koin:koin-android:3.1.5"
+    const val KOIN_ANDROID = "io.insert-koin:koin-android:3.2.0"
 
     //// Core Library Desugaring
     // https://developer.android.com/studio/write/java8-support#library-desugaring
@@ -395,6 +395,12 @@ fun DependencyHandler.composeMapsDependencies() {
     implementation((Libraries.COMPOSE_MAPS))
     implementation((Libraries.COMPOSE_MAPS_WIDGETS))
     implementation((Libraries.GOOGLE_MAPS))
+}
+// https://developers.google.com/maps/documentation/places/android-sdk/ktx
+// https://github.com/googlemaps/android-places-ktx
+fun DependencyHandler.placesApiDependencies() {
+    implementation(Libraries.PLACES_API)
+    implementation(Libraries.PLACES_API_KTX)
 }
 
 fun DependencyHandler.accompanistDependencies() {
