@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id(Config.ApplyPlugins.GOOGLE_MAPS_SECRETS_PLUGIN)
 }
 
 android {
@@ -42,4 +43,7 @@ dependencies {
     placesApiDependencies()
     // Koin - Dependency Injection
     koinDependencies()
+
+    androidxStartupDependencies()
+
 }

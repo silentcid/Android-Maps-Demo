@@ -32,7 +32,7 @@ interface PlacesRepository: Repository {
 }
 
 internal class PlacesRepositoryImp() : PlacesRepository, KoinComponent {
-    val placesClient: PlacesClientProvider by inject()
+    private val placesClient: PlacesClient by inject()
 
     private val _placesAutocompletePredictionEvents = MutableStateFlow<PlacesSearchEvent>(PlaceSearchEventIdle)
     private val _placeDetails = MutableStateFlow<PlacesSearchEvent>(PlaceSearchEventIdle)

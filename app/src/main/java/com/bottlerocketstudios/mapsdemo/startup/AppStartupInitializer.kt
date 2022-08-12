@@ -2,6 +2,7 @@ package com.bottlerocketstudios.mapsdemo.startup
 
 import android.content.Context
 import androidx.startup.Initializer
+import com.bottlerocketstudios.places.startup.PlacesStartupInitializer
 import timber.log.Timber
 
 class AppStartupInitializer: Initializer<Unit> {
@@ -13,5 +14,6 @@ class AppStartupInitializer: Initializer<Unit> {
     override fun dependencies(): List<Class<out Initializer<out Any>>> = listOf(
         TimberStartupInitializer::class.java,
         KoinStartupInitializer::class.java,
+        PlacesStartupInitializer::class.java
     )
 }
