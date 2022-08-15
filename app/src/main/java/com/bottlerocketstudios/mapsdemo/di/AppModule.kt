@@ -6,7 +6,6 @@ import org.koin.dsl.module
 
 object AppModule {
     val module = module {
-        single { PlacesClientProvider.providePlacesClient(app = get()) }
         single<BuildConfigProvider> { BuildConfigProviderImpl() }
     }
 }

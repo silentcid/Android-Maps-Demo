@@ -7,6 +7,5 @@ import org.koin.dsl.module
 object PlacesModule {
     val module = module {
         single { Places.createClient(get()) }
-        single<BuildConfigProvider> {get()}
     }
 }

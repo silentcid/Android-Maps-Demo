@@ -4,7 +4,6 @@ import android.content.Context
 import androidx.startup.Initializer
 import com.bottlerocketstudios.mapsdemo.domain.di.BuildConfigProvider
 import com.google.android.libraries.places.api.Places
-import org.koin.android.BuildConfig
 import org.koin.java.KoinJavaComponent.inject
 
 
