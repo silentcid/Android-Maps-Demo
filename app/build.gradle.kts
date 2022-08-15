@@ -164,7 +164,7 @@ dependencies {
     // Launchpad
     launchPadDependencies()
 
-    //Places API
+    // Places API
     placesApiDependencies()
 
     coreLibraryDesugaringDependencies()

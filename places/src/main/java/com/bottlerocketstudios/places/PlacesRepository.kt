@@ -23,8 +23,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import org.koin.core.component.KoinComponent
 
-
-interface PlacesRepository: Repository {
+interface PlacesRepository : Repository {
     val placesEvents: StateFlow<PlacesSearchEvent>
     val placeDetails: StateFlow<PlacesSearchEvent>
     suspend fun getPlaces(placesRequest: PlacesRequest)
@@ -58,7 +57,6 @@ internal class PlacesRepositoryImp() : PlacesRepository, KoinComponent {
             val response = placesClient.awaitFindAutocompletePredictions(request)
             _placesAutocompletePredictionEvents.value = PlacesSearchEventFound(response.autocompletePredictions)
         }
-
     }
 
     override suspend fun onAutoCompletePredictionSelected(prediction: AutocompletePrediction) {
@@ -77,6 +75,5 @@ internal class PlacesRepositoryImp() : PlacesRepository, KoinComponent {
         val placeResponse = placesClient.awaitFetchPlace(request = placeRequest)
 
         _placeDetails.value = PlaceDetailsFound(placeResponse.place)
-
     }
 }

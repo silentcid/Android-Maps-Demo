@@ -5,7 +5,7 @@ import androidx.startup.Initializer
 import com.bottlerocketstudios.places.startup.PlacesStartupInitializer
 import timber.log.Timber
 
-class AppStartupInitializer: Initializer<Unit> {
+class AppStartupInitializer : Initializer<Unit> {
     override fun create(context: Context) {
         Timber.v("[create]")
         // no-op

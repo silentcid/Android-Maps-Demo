@@ -13,7 +13,7 @@ import org.koin.core.logger.Level
 import timber.log.Timber
 
 /** AndroidX Startup Koin initializer */
-class KoinStartupInitializer: Initializer<KoinApplication> {
+class KoinStartupInitializer : Initializer<KoinApplication> {
     override fun create(context: Context): KoinApplication {
         Timber.v("[create]")
         // Can't use Koin to create this due to necessary logic needed in startKoin for androidLogger. Just create/use an instance here for this special case.
