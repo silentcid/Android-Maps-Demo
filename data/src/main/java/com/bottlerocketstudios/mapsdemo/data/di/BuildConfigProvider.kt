@@ -20,4 +20,6 @@ interface BuildConfigProvider {
      * See BuildInfoManager.createBuildFingerprint(...)
      */
     val buildIdentifier: String
+
+    val mapsApiKey: String
 }

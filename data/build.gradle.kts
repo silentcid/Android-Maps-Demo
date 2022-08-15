@@ -3,6 +3,7 @@ plugins {
     kotlin(Config.ApplyPlugins.Kotlin.ANDROID)
     id(Config.ApplyPlugins.KSP)
     id(Config.ApplyPlugins.PARCELIZE)
+    id(Config.ApplyPlugins.GOOGLE_MAPS_SECRETS_PLUGIN)
 }
 // module specific code coverage verification threshold
 extra.set("jacocoCoverageThreshold", 0.40.toBigDecimal())

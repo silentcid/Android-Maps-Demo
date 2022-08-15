@@ -10,6 +10,8 @@ class BuildConfigProviderImpl : BuildConfigProvider {
         get() = isProductionReleaseBuild()
     override val buildIdentifier: String
         get() = BuildConfig.BUILD_IDENTIFIER
+    override val mapsApiKey: String
+        get() = BuildConfig.MAPS_API_KEY
 }
 
 private fun isProductionReleaseBuild() = !BuildConfig.DEBUG && BuildConfig.PRODUCTION
