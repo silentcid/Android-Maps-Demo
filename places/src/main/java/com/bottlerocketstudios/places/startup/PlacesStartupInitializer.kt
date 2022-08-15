@@ -9,6 +9,8 @@ import org.koin.java.KoinJavaComponent.inject
 class PlacesStartupInitializer : Initializer<Unit> {
     override fun create(context: Context) {
         val buildConfigProvider by inject<BuildConfigProvider>(BuildConfigProvider::class.java)
+        // Secrets Gradle Plugin is being used in the project. To give Places the API Key, the BuildConfigProvider is being injected here
+        // to get the API key variable.
         Places.initialize(context, buildConfigProvider.mapsApiKey)
     }
 
