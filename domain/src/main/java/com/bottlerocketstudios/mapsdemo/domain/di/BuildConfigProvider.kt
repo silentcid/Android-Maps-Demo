@@ -1,4 +1,4 @@
-package com.bottlerocketstudios.mapsdemo.data.di
+package com.bottlerocketstudios.mapsdemo.domain.di
 
 /** Abstracts values from the application generated BuildConfig to be accessible anywhere and improve testability */
 interface BuildConfigProvider {

@@ -1,7 +1,7 @@
 package com.bottlerocketstudios.mapsdemo.buildconfig
 
 import com.bottlerocketstudios.mapsdemo.BuildConfig
-import com.bottlerocketstudios.mapsdemo.data.di.BuildConfigProvider
+import com.bottlerocketstudios.mapsdemo.domain.di.BuildConfigProvider
 
 class BuildConfigProviderImpl : BuildConfigProvider {
     override val isDebugOrInternalBuild: Boolean
