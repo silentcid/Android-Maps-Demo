@@ -46,4 +46,9 @@ dependencies {
     koinDependencies()
 
     androidxStartupDependencies()
+
+    // Test
+    junitDependencies()
+    mockitoKotlinDependencies()
+    truthDependencies()
 }
