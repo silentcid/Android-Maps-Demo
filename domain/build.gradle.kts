@@ -12,4 +12,14 @@ dependencies {
     // Kotlin/coroutines
     kotlinDependencies()
     coroutineDependencies()
+    // Places
+    placesApiDependencies()
+
+    // Test
+    junitDependencies()
+    mockitoKotlinDependencies()
+    truthDependencies()
+    archCoreTestingDependencies()
+    kotlinxCoroutineTestingDependencies()
+    turbineDependencies()
 }

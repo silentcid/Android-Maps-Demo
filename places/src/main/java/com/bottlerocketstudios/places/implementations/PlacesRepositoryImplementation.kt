@@ -1,19 +1,13 @@
-package com.bottlerocketstudios.places
+package com.bottlerocketstudios.places.implementations
 
-import com.bottlerocketstudios.mapsdemo.data.model.PlaceDetailsFound
-import com.bottlerocketstudios.mapsdemo.data.model.PlaceSearchEventIdle
-import com.bottlerocketstudios.mapsdemo.domain.models.Repository
-import com.bottlerocketstudios.mapsdemo.data.model.PlacesRequest
-import com.bottlerocketstudios.mapsdemo.data.model.PlacesSearchEvent
-import com.bottlerocketstudios.mapsdemo.data.model.PlacesSearchEventError
-import com.bottlerocketstudios.mapsdemo.data.model.PlacesSearchEventFound
-import com.google.android.libraries.places.api.model.AutocompletePrediction
-import com.google.android.libraries.places.api.model.Place
+import com.bottlerocketstudios.mapsdemo.domain.models.PlaceSearchEventIdle
+import com.bottlerocketstudios.mapsdemo.domain.models.PlacesRequest
+import com.bottlerocketstudios.mapsdemo.domain.models.PlacesSearchEvent
+import com.bottlerocketstudios.mapsdemo.domain.models.PlacesSearchEventError
+import com.bottlerocketstudios.mapsdemo.domain.repositories.PlacesRepository
 import com.google.android.libraries.places.api.net.PlacesClient
 import org.koin.core.component.inject
-import com.google.android.libraries.places.ktx.api.net.awaitFetchPlace
 import com.google.android.libraries.places.ktx.api.net.awaitFindAutocompletePredictions
-import com.google.android.libraries.places.ktx.api.net.fetchPlaceRequest
 import com.google.android.libraries.places.ktx.api.net.findAutocompletePredictionsRequest
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
@@ -23,14 +17,9 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import org.koin.core.component.KoinComponent
 
-interface PlacesRepository : Repository {
-    val placesEvents: StateFlow<PlacesSearchEvent>
-    val placeDetails: StateFlow<PlacesSearchEvent>
-    suspend fun getPlaces(placesRequest: PlacesRequest)
-    suspend fun onAutoCompletePredictionSelected(prediction: AutocompletePrediction)
-}
 
-internal class PlacesRepositoryImp() : PlacesRepository, KoinComponent {
+
+internal class PlacesRepositoryImplementation() : PlacesRepository, KoinComponent {
     private val placesClient: PlacesClient by inject()
 
     private val _placesAutocompletePredictionEvents = MutableStateFlow<PlacesSearchEvent>(PlaceSearchEventIdle)
@@ -55,11 +44,12 @@ internal class PlacesRepositoryImp() : PlacesRepository, KoinComponent {
             }
 
             val response = placesClient.awaitFindAutocompletePredictions(request)
-            _placesAutocompletePredictionEvents.value = PlacesSearchEventFound(response.autocompletePredictions)
+            //_placesAutocompletePredictionEvents.value = PlacesSearchEventFound(response.autocompletePredictions)
         }
     }
 
-    override suspend fun onAutoCompletePredictionSelected(prediction: AutocompletePrediction) {
+    // To be used later when we need to implement places auto predictions
+    /*override suspend fun onAutoCompletePredictionSelected(prediction: AutocompletePrediction) {
 
         // For all the different Fields you can use see https://developers.google.com/maps/documentation/places/web-service/place-data-fields
         val placeRequest = fetchPlaceRequest(
@@ -75,5 +65,5 @@ internal class PlacesRepositoryImp() : PlacesRepository, KoinComponent {
         val placeResponse = placesClient.awaitFetchPlace(request = placeRequest)
 
         _placeDetails.value = PlaceDetailsFound(placeResponse.place)
-    }
+    }*/
 }

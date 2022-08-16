@@ -1,9 +1,9 @@
 package com.bottlerocketstudios.places.mocks
 
-import com.bottlerocketstudios.mapsdemo.data.model.PlaceSearchEventIdle
-import com.bottlerocketstudios.mapsdemo.data.model.PlacesRequest
-import com.bottlerocketstudios.mapsdemo.data.model.PlacesSearchEvent
-import com.bottlerocketstudios.mapsdemo.data.model.PlacesSearchEventFound
+import com.bottlerocketstudios.mapsdemo.domain.models.PlaceSearchEventIdle
+import com.bottlerocketstudios.mapsdemo.domain.models.PlacesRequest
+import com.bottlerocketstudios.mapsdemo.domain.models.PlacesSearchEvent
+import com.bottlerocketstudios.mapsdemo.domain.models.PlacesSearchEventFound
 import com.bottlerocketstudios.places.PlacesRepository
 import com.google.android.libraries.places.api.model.TypeFilter
 import kotlinx.coroutines.flow.MutableStateFlow
