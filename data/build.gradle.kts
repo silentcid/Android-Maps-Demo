@@ -132,6 +132,8 @@ dependencies {
         devConfigurations = devConfigurations,
         productionConfiguration = productionReleaseImplementation
     )
+    // Places
+    placesApiDependencies()
 
     // Test
     junitDependencies()

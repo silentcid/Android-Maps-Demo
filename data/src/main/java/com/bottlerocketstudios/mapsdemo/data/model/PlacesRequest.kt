@@ -1,4 +1,4 @@
-package com.bottlerocketstudios.places.model
+package com.bottlerocketstudios.mapsdemo.data.model
 
 import com.google.android.libraries.places.api.model.LocationBias
 import com.google.android.libraries.places.api.model.TypeFilter

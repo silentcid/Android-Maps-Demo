@@ -1,12 +1,12 @@
 package com.bottlerocketstudios.places
 
+import com.bottlerocketstudios.mapsdemo.data.model.PlaceDetailsFound
+import com.bottlerocketstudios.mapsdemo.data.model.PlaceSearchEventIdle
 import com.bottlerocketstudios.mapsdemo.domain.models.Repository
-import com.bottlerocketstudios.places.model.PlaceDetailsFound
-import com.bottlerocketstudios.places.model.PlaceSearchEventIdle
-import com.bottlerocketstudios.places.model.PlacesRequest
-import com.bottlerocketstudios.places.model.PlacesSearchEvent
-import com.bottlerocketstudios.places.model.PlacesSearchEventError
-import com.bottlerocketstudios.places.model.PlacesSearchEventFound
+import com.bottlerocketstudios.mapsdemo.data.model.PlacesRequest
+import com.bottlerocketstudios.mapsdemo.data.model.PlacesSearchEvent
+import com.bottlerocketstudios.mapsdemo.data.model.PlacesSearchEventError
+import com.bottlerocketstudios.mapsdemo.data.model.PlacesSearchEventFound
 import com.google.android.libraries.places.api.model.AutocompletePrediction
 import com.google.android.libraries.places.api.model.Place
 import com.google.android.libraries.places.api.net.PlacesClient
