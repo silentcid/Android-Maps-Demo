@@ -129,6 +129,7 @@ dependencies {
     implementation(project(mapOf("path" to ":domain")))
     implementation(project(mapOf("path" to ":data")))
     implementation(project(mapOf("path" to ":compose")))
+    implementation(project(mapOf("path" to ":places")))
     // TODO: List out each jar/aar explicitly to help avoid the danger of someone "slipping" a dangerous lib into the directory
     // implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
@@ -151,6 +152,9 @@ dependencies {
 
     // Launchpad
     launchPadDependencies()
+
+    // Places API
+    placesApiDependencies()
 
     coreLibraryDesugaringDependencies()
 

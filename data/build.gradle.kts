@@ -3,6 +3,7 @@ plugins {
     kotlin(Config.ApplyPlugins.Kotlin.ANDROID)
     id(Config.ApplyPlugins.KSP)
     id(Config.ApplyPlugins.PARCELIZE)
+    id(Config.ApplyPlugins.GOOGLE_MAPS_SECRETS_PLUGIN)
 }
 // module specific code coverage verification threshold
 extra.set("jacocoCoverageThreshold", 0.40.toBigDecimal())
@@ -103,6 +104,7 @@ val devConfigurations: List<Configuration> = listOf(
 
 dependencies {
 
+    implementation(project(mapOf("path" to ":domain")))
     // TODO: List out each jar/aar explicitly to help avoid the danger of someone "slipping" a dangerous lib into the directory
     //  implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
