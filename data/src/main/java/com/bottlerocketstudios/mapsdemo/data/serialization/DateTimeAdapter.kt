@@ -13,7 +13,6 @@ class DateTimeAdapter(private val clock: Clock) {
 
     @FromJson
     fun fromJson(zonedDateTime: String): ZonedDateTime = run {
-
         try {
             // TODO: To verify if this needed
             ZonedDateTime.parse(zonedDateTime)
