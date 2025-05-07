@@ -7,6 +7,16 @@ Uses a hybrid system where parts of the custom pins and clustering system method
 ## Retrofit adapter with Kotlin Result
 This also uses the Earlier releases of Kotlin Result in a Retrofit Adapter. It uses Kotlin's Result<T> type to wrap API responses in a type-safe way. All Retrofit calls return a Result<T>, allowing clean and centralized handling of both success and error cases:
 
+ ```private fun getYelpBusinesses(latLong: LatLong, radius: Int?) {
+        launchIO {
+            yelpRepository.getBusinessesByLatLng(latLong, radius)
+                .onSuccess { businessList ->
+                    yelpBusinessState.value = businessList
+                }.handleFailure()
+        }
+    }
+```
+Can view some of the code here:
 data/src/main/java/com/bottlerocketstudios/mapsdemo/infrastructure/retrofitadapter
 
 ## Steps on obtaining an Google Maps API key to run the Android Maps Demo.
