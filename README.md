@@ -1,8 +1,11 @@
 Bottle Rocket Android Maps Guidelines
 =====================================
 
-## Google Maps Library for pins Hybrid for the first release of Jetpack Compose
-Uses a hybrid system where parts of the custom pins and clustering system methods were being used to display pins in clusters in Jetpack Compose. The library was not updated by Google for Jetpack Compose, and was mainly used in Fragments. This also uses the Earlier releases of Kotlin Result in a Retrofit Adapter. It uses Kotlin's Result<T> type to wrap API responses in a type-safe way. All Retrofit calls return a Result<T>, allowing clean and centralized handling of both success and error cases:
+## Google Maps Library for pins hybrid for the first release of Jetpack Compose
+Uses a hybrid system where parts of the custom pins and clustering system methods were being used to display pins in clusters in Jetpack Compose. The library was not updated by Google for Jetpack Compose, and was mainly used in Fragments. 
+
+## Retrofit adapter with Kotlin Result
+This also uses the Earlier releases of Kotlin Result in a Retrofit Adapter. It uses Kotlin's Result<T> type to wrap API responses in a type-safe way. All Retrofit calls return a Result<T>, allowing clean and centralized handling of both success and error cases:
 
 data/src/main/java/com/bottlerocketstudios/mapsdemo/infrastructure/retrofitadapter
 
