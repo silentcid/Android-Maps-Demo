@@ -53,6 +53,8 @@ object Config {
 
     const val COMPOSE_MAPS_VERSION = "2.5.3"
 
+    const val MAPS_SECRETS_VERSION = "2.0.1"
+
     /**
      * Called from root project buildscript block in the project root build.gradle.kts
      */
@@ -80,6 +82,10 @@ object Config {
         const val JACOCO = "jacoco" // https://docs.gradle.org/current/userguide/jacoco_plugin.html - Helper jacoco gradle files manage applying the jacoco plugin
         const val PARCELIZE = "kotlin-parcelize"
         const val KSP = "com.google.devtools.ksp"
+
+        // https://developers.google.com/maps/documentation/android-sdk/secrets-gradle-plugin
+        const val GOOGLE_MAPS_SECRETS_PLUGIN = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin"
+
         object Kotlin {
             const val ANDROID = "android"
         }
@@ -153,10 +159,20 @@ private object Libraries {
 
     // Android Map Compose
     // https://github.com/googlemaps/android-maps-compose
+    // https://github.com/googlemaps/android-maps-utils
     private const val COMPOSE_MAPS_VERSION = Config.COMPOSE_MAPS_VERSION
     const val COMPOSE_MAPS = "com.google.maps.android:maps-compose:$COMPOSE_MAPS_VERSION"
     const val GOOGLE_MAPS = "com.google.android.gms:play-services-maps:18.0.2"
     const val COMPOSE_MAPS_WIDGETS = "com.google.maps.android:maps-compose-widgets:$COMPOSE_MAPS_VERSION"
+    const val GOOGLE_MAPS_UTILS = "com.google.maps.android:android-maps-utils:2.4.0"
+
+    // Places API
+    // https://github.com/googlemaps/android-places-ktx
+    // https://developers.google.com/maps/documentation/places/android-sdk/ktx
+    // https://developers.google.com/maps/documentation/places/android-sdk/config
+    // https://developers.google.com/maps/documentation/places/android-sdk/releases
+    const val PLACES_API_KTX = "com.google.maps.android:places-ktx:0.4.0"
+    const val PLACES_API = "com.google.android.libraries.places:places:2.6.0"
 
 
     // Tooling support (Previews, etc.)
@@ -228,7 +244,7 @@ private object Libraries {
     //// Koin
     // https://github.com/InsertKoinIO/koin/blob/master/CHANGELOG.md
     // https://github.com/InsertKoinIO/koin/tags
-    const val KOIN_ANDROID = "io.insert-koin:koin-android:3.1.5"
+    const val KOIN_ANDROID = "io.insert-koin:koin-android:3.2.0"
 
     //// Core Library Desugaring
     // https://developer.android.com/studio/write/java8-support#library-desugaring
@@ -384,6 +400,13 @@ fun DependencyHandler.composeMapsDependencies() {
     implementation((Libraries.COMPOSE_MAPS))
     implementation((Libraries.COMPOSE_MAPS_WIDGETS))
     implementation((Libraries.GOOGLE_MAPS))
+    implementation((Libraries.GOOGLE_MAPS_UTILS))
+
+}
+
+fun DependencyHandler.placesApiDependencies() {
+    implementation(Libraries.PLACES_API)
+    implementation(Libraries.PLACES_API_KTX)
 }
 
 fun DependencyHandler.accompanistDependencies() {

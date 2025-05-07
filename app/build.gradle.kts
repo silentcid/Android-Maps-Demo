@@ -6,10 +6,11 @@ plugins {
     kotlin(Config.ApplyPlugins.Kotlin.ANDROID)
     id(Config.ApplyPlugins.KSP)
     id(Config.ApplyPlugins.PARCELIZE)
+    id(Config.ApplyPlugins.GOOGLE_MAPS_SECRETS_PLUGIN)
 }
 // module specific code coverage verification threshold
 extra.set("jacocoCoverageThreshold", 0.40.toBigDecimal())
-
+apply(from = "../jacocoModule.gradle")
 apply(from = "../renameAppBundle.gradle.kts") // configures additional gradle tasks to rename app bundles (when needed)
 
 // Prep BuildInfoManager to use its functions/properties later throughout this build script
@@ -29,6 +30,7 @@ android {
     compileSdk = Config.AndroidSdkVersions.COMPILE_SDK
     buildToolsVersion = Config.AndroidSdkVersions.BUILD_TOOLS
     defaultConfig {
+
         minSdk = Config.AndroidSdkVersions.MIN_SDK
         targetSdk = Config.AndroidSdkVersions.TARGET_SDK
         versionCode = BuildInfoManager.APP_VERSION.versionCode
@@ -106,6 +108,7 @@ android {
             ignore = true
         }
     }
+
     applicationVariants.all {
         // Using a local val here since attempting to use a named lambda parameter would change the function signature from operating on applicationVariants.all (with an `Action` parameter)
         // to the Collections Iterable.`all` function. Same thing applies to outputs.all below
@@ -127,6 +130,7 @@ dependencies {
     implementation(project(mapOf("path" to ":domain")))
     implementation(project(mapOf("path" to ":data")))
     implementation(project(mapOf("path" to ":compose")))
+    implementation(project(mapOf("path" to ":places")))
     // TODO: List out each jar/aar explicitly to help avoid the danger of someone "slipping" a dangerous lib into the directory
     // implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
@@ -149,6 +153,9 @@ dependencies {
 
     // Launchpad
     launchPadDependencies()
+
+    // Places API
+    placesApiDependencies()
 
     coreLibraryDesugaringDependencies()
 
